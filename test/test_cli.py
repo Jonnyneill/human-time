@@ -43,7 +43,7 @@ def test_with_different_time_formats(cliargs, numeric_time, capsys):
         cliargs.return_value = argparse.Namespace(**{"numeric_time": numeric_time})
         main()
     captured = capsys.readouterr()
-    assert captured.out == "One o'clock"
+    assert captured.out.strip() == "One o'clock"
 
 # Test when not providing a time
 @patch("argparse.ArgumentParser.parse_args")
@@ -52,7 +52,7 @@ def test_with_no_time(cliargs, capsys):
         cliargs.return_value = argparse.Namespace(**{"numeric_time": "15:00"})
         main()
     captured = capsys.readouterr()
-    assert captured.out == "Three o'clock"
+    assert captured.out.strip() == "Three o'clock"
 
 @pytest.mark.parametrize(
     "numeric_time, expected_result",
@@ -78,4 +78,4 @@ def test_get_change(cliargs, numeric_time, expected_result, capsys):
         cliargs.return_value = argparse.Namespace(**{"numeric_time": numeric_time})
         main()
     captured = capsys.readouterr()
-    assert captured.out == expected_result
+    assert captured.out.strip() == expected_result
