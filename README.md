@@ -12,8 +12,6 @@ Examples:
 
 Distributed on PyPI - https://pypi.org/project/human-time/
 
-`pip install human-time`
-
 ## System requirements
 
 Python >= 2.7 is required. The instructions below are focused on creating a Python 3 virtual environment in order to
@@ -23,7 +21,7 @@ ringfence the dependencies.
 
 The package can be installed from source:
 ```bash
-cd talking-clock
+cd human-time
 python3 -m venv venv
 source venv/bin/activate
 
@@ -34,7 +32,7 @@ python -m pip install -e . --upgrade
 
 Alternatively the package can be pulled from PyPi:
 ```bash
-python3 -m pip install talking-clock
+python3 -m pip install human-time
 ```
 
 The installed application can then be invoked in two says, either as command line tool, which simply performs a single

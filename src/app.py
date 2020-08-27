@@ -10,9 +10,10 @@ def start():
     debug = get_debug_flag()
     log_level = "DEBUG" if debug else "INFO"
     logging.basicConfig(format="[%(asctime)s] [%(process)d] [%(levelname)s] %(message)s", level=log_level)
-    app = connexion.FlaskApp(__name__, specification_dir="../openapi/")
+    openapi_spec_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "openapi"))
+    app = connexion.FlaskApp(__name__, specification_dir=openapi_spec_path)
 
-    app.add_api("human-time.yaml", strict_validation=True, validate_responses=True)
+    app.add_api("humantime.yaml", strict_validation=True, validate_responses=True)
 
     @app.route("/")
     def root():
