@@ -8,7 +8,7 @@ def readme():
 
 setup(
     name="human-time",
-    version="1.0.1",
+    version="1.0.4",
     author="Jonathan Neill",
     author_email="jonnyneill@hotmail.com",
     description="Converts digit based time formats to the english language equivalent",
@@ -17,7 +17,9 @@ setup(
     long_description=readme(),
     long_description_content_type="text/markdown",
     url="https://github.com/Jonnyneill/human-time",
+    include_package_data=True,
     packages=find_packages(),
+    install_requires=["connexion[swagger-ui]"],
     python_requires=">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*",
     entry_points={
         "console_scripts": [

@@ -16,13 +16,19 @@ def main():
     args = parser.parse_args()
 
     if re.search('[a-zA-Z]', args.numeric_time):
-        sys.stderr.write("Error: Provided time [{}] contains non numeric characters".format(args.numeric_time))
-        sys.exit(1)
+        log_and_exit("Error: Provided time [{}] contains non numeric characters".format(args.numeric_time), 1)
 
     try:
         human_time = talk(args.numeric_time)
-        sys.stdout.write(human_time)
-        sys.exit(0)
+        log_and_exit(human_time, 0)
     except ValueError:
-        sys.stderr.write("Error: Numeric time [{}] is not in a valid format".format(args.numeric_time))
-        sys.exit(1)
+        log_and_exit("Error: Numeric time [{}] is not in a valid format".format(args.numeric_time), 1)
+
+
+def log_and_exit(message, code):
+    if code == 0:
+        sys.stdout.write(message + "\n")
+    else:
+        sys.stderr.write(message + "\n")
+    sys.stdout.flush()
+    sys.exit(code)
