@@ -2,11 +2,17 @@
 
 Convert numerical times to their human readable English language equivalent.
 
-https://pypi.org/project/human-time/
+Examples: 
+
+`15:00` becomes `"Three o'clock"`
+
+`15:15` becomes `"Quarter past three"`
+
+`15:27` becomes `"Twenty seven minutes past three"`
+
+Distributed on PyPI - https://pypi.org/project/human-time/
 
 `pip install human-time`
-
-Example: `15:00` becomes `"Three o'clock"`
 
 ## System requirements
 
