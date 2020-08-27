@@ -2,6 +2,10 @@
 
 Convert numerical times to their human readable English language equivalent.
 
+https://pypi.org/project/human-time/
+
+`pip install human-time`
+
 Example: `15:00` becomes `"Three o'clock"`
 
 ## System requirements
@@ -40,14 +44,14 @@ provided, the human time for the given numeric time.
 
 If using `humantime-server`, an OpenAPI user interface is available to test it's endpoint, which can be found at
 
-##Testing
+## Testing
 
 Before testing ensure that the Python virtual environment is set up, and both unit test and application dependencies 
 are installed by running `python -m pip install -r requirements.txt -r test/requirements.txt`
 
 To run the tests run `python -m pytest --cov=src --pyargs test`
 
-##Build and Publish
+## Build and Publish
 
 The package is built, and deployed to PyPi via `twine`, as shown below.
 
