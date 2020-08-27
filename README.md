@@ -1,10 +1,10 @@
-#Human-Time
+# Human-Time
 
 Convert numerical times to their human readable English language equivalent.
 
 Example: `15:00` becomes `"Three o'clock"`
 
-##System requirements
+## System requirements
 
 Python >= 2.7 is required. The instructions below are focused on creating a Python 3 virtual environment in order to
 ringfence the dependencies. 
