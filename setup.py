@@ -8,7 +8,7 @@ def readme():
 
 setup(
     name="human-time",
-    version="1.0.4",
+    version="1.0.5",
     author="Jonathan Neill",
     author_email="jonnyneill@hotmail.com",
     description="Converts digit based time formats to the english language equivalent",
