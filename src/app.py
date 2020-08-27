@@ -9,11 +9,10 @@ from flask.helpers import get_debug_flag
 def start():
     debug = get_debug_flag()
     log_level = "DEBUG" if debug else "INFO"
-
-    logging.basicConfig(level=log_level)
+    logging.basicConfig(format="[%(asctime)s] [%(process)d] [%(levelname)s] %(message)s", level=log_level)
     app = connexion.FlaskApp(__name__, specification_dir="../openapi/")
 
-    app.add_api("talking_clock_api.yaml", strict_validation=True, validate_responses=True)
+    app.add_api("human-time.yaml", strict_validation=True, validate_responses=True)
 
     @app.route("/")
     def root():

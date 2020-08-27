@@ -21,7 +21,7 @@ paths:
         Retrieve the provided time in words, if time is not provided the current time wil be returned. All valid
         numerical time formats are supported, e.g. 16:00, 1600, 16.00, 4:00, 4.00, 0400, 400
       x-openapi-router-controller: src.request_handler
-      operationId: convert_time
+      operationId: get_human_time
       parameters:
         - $ref: '#/components/parameters/time'
       responses:

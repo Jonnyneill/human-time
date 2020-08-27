@@ -24,19 +24,18 @@ def get_context(time_input):
     :param time_input: The time string from which to base context
     :return: a tuple containing the contextualised hour and minute,
     """
-
     try:
-        time_input = time.strptime(time_input, "%H:%M")
+        formatted_time = time.strptime(time_input, "%H:%M")
         separator = ":"
     except ValueError:
         try:
-            time_input = time.strptime(time_input, "%H.%M")
+            formatted_time = time.strptime(time_input, "%H.%M")
             separator = "."
         except ValueError:
-            time_input = time.strptime(time_input, "%H%M")
+            formatted_time = time.strptime(time_input, "%H%M")
             separator = ""
 
-    twelve_hour_time = time.strftime("%I{}%M".format(separator), time_input)
+    twelve_hour_time = time.strftime("%I{}%M".format(separator), formatted_time)
 
     if separator:
         hour, minute = map(int, twelve_hour_time.split(separator))
@@ -88,4 +87,3 @@ def convert_to_words(hour, minute, context):
 
     words.extend([context, numbers[hour]])
     return words
-

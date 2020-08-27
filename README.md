@@ -1,4 +1,4 @@
-# Human-Time
+# HumanTime
 
 Convert numerical times to their human readable English language equivalent.
 
