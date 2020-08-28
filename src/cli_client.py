@@ -9,9 +9,12 @@ from clock import talk
 
 
 def main():
+    """
+    Convert numeric time to human time and write the result to std out
+    """
     parser = argparse.ArgumentParser(description="Convert a numeric time to words")
     parser.add_argument(
-        "-t", "--numeric_time", type=str, default=datetime.now().strftime("%H:%M"), help="The time to convert to words"
+        "-t", "--numeric-time", type=str, default=datetime.now().strftime("%H:%M"), help="The time to convert to words"
     )
     args = parser.parse_args()
 
