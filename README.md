@@ -14,7 +14,7 @@ Distributed on PyPI - https://pypi.org/project/human-time/
 
 ## System requirements
 
-Python >= 2.7 is required. The instructions below are focused on creating a Python 3 virtual environment in order to
+Python >= 3.6 is required. The instructions below are focused on creating a Python 3 virtual environment in order to
 ringfence the dependencies. 
 
 ## Running the application
@@ -51,17 +51,17 @@ If using `humantime-server`, an OpenAPI user interface is available to test it's
 ## Testing
 
 Before testing ensure that the Python virtual environment is set up, and both unit test and application dependencies 
-are installed by running `python -m pip install -r requirements.txt -r test/requirements.txt`
+are installed by running `python3 -m pip install -r requirements.txt -r test/requirements.txt`
 
-To run the tests run `python -m pytest --cov=src --pyargs test`
+To run the tests run `python3 -m pytest --cov=src --pyargs test`
 
 ## Build and Publish
 
 The package is built, and deployed to PyPi via `twine`, as shown below.
 
 ```bash
-python -m pip install setuptools twine
-python -m setup sdist
+python3 -m pip install setuptools twine
+python3 -m setup sdist
 twine upload dist/*
 ```
 
